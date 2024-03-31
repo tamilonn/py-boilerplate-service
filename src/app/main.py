@@ -4,7 +4,6 @@ from contextlib import asynccontextmanager
 import sys
 import os
 
-
 myDir = os.getcwd()
 sys.path.append(myDir)
 
@@ -37,7 +36,7 @@ def create_app():
     app = FastAPI(lifespan=lifespan)
 
     #v1 routner mappings..
-    app.include_router(svc_routers_v1.router)
+    # app.include_router(svc_routers_v1.router)
     app.include_router(svc_routers_v1.router, prefix="/v1")
 
     return app
