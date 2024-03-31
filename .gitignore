@@ -1,0 +1,11 @@
+*.pyc
+src/__pycache__/main.cpython-311.pyc
+src/app/__pycache__/__init__.cpython-311.pyc
+src/app/__pycache__/main.cpython-311.pyc
+src/app/models/__pycache__/__init__.cpython-311.pyc
+src/app/models/core/__pycache__/__init__.cpython-311.pyc
+src/app/models/core/__pycache__/error_detail.cpython-311.pyc
+src/app/models/core/__pycache__/error_response.cpython-311.pyc
+src/app/models/core/__pycache__/response.cpython-311.pyc
+src/app/routers/__pycache__/__init__.cpython-311.pyc
+src/app/routers/__pycache__/svc_routers_v1.cpython-311.pyc
