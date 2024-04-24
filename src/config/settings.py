@@ -7,6 +7,54 @@
 # from pydantic import BaseSettings, Field, PostgresDsn
 # from pydantic.networks import HttpUrl
 
+import logging
+from typing import ClassVar
+import os
+
+#initialize logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__file__)
+
+'This class is used to obtain the environment name such as "dev, preprod, prod" from system variable '
+'Usage ConfigEnvironment.environment will provide environment name value from all modules and packages'
+class ConfigEnvironment(object):
+    environment: ClassVar[str]='local'
+
+    #Make a singleton object creation
+    def __new__(cls):
+        'This is a singleton class'
+
+        logger.info('ConfigEnvironment: __new__()...')
+        if not hasattr(cls, 'instance'):
+            cls.instance = super(ConfigEnvironment, cls).__new__(cls)
+
+        return cls.instance
+    
+
+    def __init__(self):
+        
+        env = os.environ.get('configEnvironment')
+        logger.info('configEnvironment =%s ',env)
+
+        if env.__eq__('dev'):
+            ConfigEnvironment.environment = 'dev'
+        elif env.__eq__('preprod'):
+            ConfigEnvironment.environment = 'preprod'
+        elif env.__eq__('prd'):
+            ConfigEnvironment.environment = 'prd'
+        else:
+            logger.error('configEnvironment is missing or incorrect -{}', env)
+            raise Exception('configEnvironment is missing or incorrect')
+
+
+# if __name__ == '__main__':
+#      obj = ConfigEnvironment()
+
+#      logger.info('obj env= %s', obj.environment)
+#      logger.info('class env= %s', ConfigEnvironment.environment)
+
+
+
 
 # class LogLevels(str, Enum):
 #     """Enum of permitted log levels."""
