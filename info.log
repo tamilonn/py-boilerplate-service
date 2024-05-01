@@ -1,0 +1,18 @@
+2024-05-01 17:07:04,818 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:47 - INFO - configEnvironment = dev 
+2024-05-01 17:07:04,819 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:68 - INFO - .env file location is = C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\.env_dev
+2024-05-01 17:07:04,819 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:72 - INFO - load_dotenv success = True
+2024-05-01 17:07:05,161 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\database.py - Line No:14 - INFO - sqlite database created/reopend in . folder = sqlitedata.db
+2024-05-01 17:07:05,258 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\main.py - Line No:32 - INFO - After application started.....now starting server startup processes..
+2024-05-01 17:09:17,120 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\main.py - Line No:40 - INFO - Before application is shut down or closed....
+2024-05-01 17:09:20,498 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:47 - INFO - configEnvironment = dev 
+2024-05-01 17:09:20,498 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:68 - INFO - .env file location is = C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\.env_dev
+2024-05-01 17:09:20,501 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:72 - INFO - load_dotenv success = True
+2024-05-01 17:09:20,685 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\database.py - Line No:14 - INFO - sqlite database created/reopend in . folder = sqlitedata.db
+2024-05-01 17:09:20,704 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\main.py - Line No:32 - INFO - After application started.....now starting server startup processes..
+2024-05-01 17:10:15,384 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\main.py - Line No:40 - INFO - Before application is shut down or closed....
+2024-05-01 17:10:40,927 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:47 - INFO - configEnvironment = dev 
+2024-05-01 17:10:40,928 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:68 - INFO - .env file location is = C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\.env_dev
+2024-05-01 17:10:40,929 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\__init__.py - Line No:72 - INFO - load_dotenv success = True
+2024-05-01 17:10:41,138 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\database.py - Line No:14 - INFO - sqlite database created/reopend in . folder = sqlitedata.db
+2024-05-01 17:10:41,178 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\main.py - Line No:32 - INFO - After application started.....now starting server startup processes..
+2024-05-01 17:11:24,567 - C:\MYPC\Development\GitLocalRepo\py-boilerplate-service\boilerplate\main.py - Line No:40 - INFO - Before application is shut down or closed....
