@@ -1,10 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException
-from app.models.core.response import ServiceResponse
-from app.models.core.error_response import ErrorResponse
+from boilerplate.schemas import ServiceResponse, ErrorResponse, ErrorDetail
+from boilerplate.database import SessionLocal, get_session
+from boilerplate.models import Setup
+from datetime import datetime
+
 
 router = APIRouter(
-    prefix="/config",
-    tags=["persons"],
+    prefix="/boilerplate",
+    tags=["boilerplate"],
     responses={404: {"description": "Requested endpoint not available"}},
 )
 
@@ -17,13 +20,17 @@ async def health():
 
 @router.get("/error")
 async def error():
-    error= ErrorResponse(403, 'Service failed!!', None)
-    service_response= ServiceResponse(False, '1.0',None, error)
+    errors = [ErrorDetail(reason='failed reason1'), ErrorDetail(reason='failed reason2')]
+    error= ErrorResponse(403, 'Service failed!!', errors)
+    
+    # errors.reason='failed'
+    service_response= ServiceResponse(False, '1.0', None, error)
     return service_response
 
 
 @router.get("/create")
 async def create():
+    
     create = {"I'm in /create endpoint!!"}
     service_response= ServiceResponse(True, '1.0',create, None)
     return service_response
