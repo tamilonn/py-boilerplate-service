@@ -1,9 +1,16 @@
 from fastapi import APIRouter, Depends, HTTPException
 from boilerplate.schemas import ServiceResponse, ErrorResponse, ErrorDetail
-from boilerplate.database import SessionLocal, get_session
-from boilerplate.models import Setup
-from datetime import datetime
+from fastapi import status
 
+
+from boilerplate import schemas
+import logging
+
+
+# initialize logger
+logger = logging.getLogger(__file__)
+# apiversion to use in service response schema
+API_VERSION = '1.0'
 
 router = APIRouter(
     prefix="/boilerplate",
@@ -14,23 +21,17 @@ router = APIRouter(
 @router.get("/health")
 async def health():
     health = {"health":"Service is running successfully!!"}
-    service_response= ServiceResponse(True, '1.0',health, None)
+    service_response= ServiceResponse(success=True, apiversion='',data=health, error=None)
+    service_response.apiversion=API_VERSION
     return service_response
 
 
 @router.get("/error")
 async def error():
     errors = [ErrorDetail(reason='failed reason1'), ErrorDetail(reason='failed reason2')]
-    error= ErrorResponse(403, 'Service failed!!', errors)
+    error= ErrorResponse(code=403, message='Service failed!!', errors=errors)
     
-    # errors.reason='failed'
-    service_response= ServiceResponse(False, '1.0', None, error)
+    service_response= ServiceResponse(success=False, apiversion='', data=None, error=error)
+    service_response.apiversion=API_VERSION
     return service_response
 
-
-@router.get("/create")
-async def create():
-    
-    create = {"I'm in /create endpoint!!"}
-    service_response= ServiceResponse(True, '1.0',create, None)
-    return service_response
