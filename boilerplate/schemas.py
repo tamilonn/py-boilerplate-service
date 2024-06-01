@@ -1,47 +1,47 @@
+from datetime import datetime
 from pydantic import BaseModel
-from typing import TypeVar, Generic
+from typing import List, Optional, TypeVar
 
 
 """
     'core model classes'
 """
-class ErrorDetail():
-    reason:str
-
-    def __init__(self, reason):
-        self.reason=reason
+class ErrorDetail(BaseModel):
+    reason:Optional[str]=None
 
 
-class ErrorResponse():
+class ErrorResponse(BaseModel):
     code:int
     message:str
-    errors = ErrorDetail
-
-    def __init__(self, code, message, errors):
-
-        self.code=code
-        self.message=message
-        self.errors=errors
+    errors:Optional[List[ErrorDetail]]=None
 
 
 T= TypeVar('T')
 
-class ServiceResponse(Generic[T]):
+class ServiceResponse(BaseModel):
     success: bool
     apiversion: str
     data: T
-    error: ErrorResponse
+    error: Optional[ErrorResponse]=None
 
-    def __init__(self, success, apiver, T, err):
-        self.success= success
-        self.apiversion= apiver
-        self.data= T
-        self.error= err
 """
     'End of core model classes'
 """
 
+class SomeTO(BaseModel):
+    config_id: int
+    # action: Optional[ActionEnum]=ActionEnum.UNKNOWN
+    created_date: Optional[datetime]=None
+    updated_date: Optional[datetime]=None
 
+    # If Custom data type (DTO or TO) is used in pydantic model, then add this statement
+    class Config:
+        arbitrary_types_allowed = True
+
+    def __init__(self, 
+                 config_id: int,
+                 **kwargs) -> None:
+        super(SomeTO, self).__init__(config_id=config_id, **kwargs)
 
 
 
